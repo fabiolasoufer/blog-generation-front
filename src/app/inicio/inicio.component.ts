@@ -92,11 +92,10 @@ export class InicioComponent implements OnInit {
   }
 
   findByTituloPostagem(){
-
     if(this.tituloPost == ''){
       this.getAllPostagens()
     } else {
-      this.postagemService.getByTituloPostagem(this.tituloPost).subscribe((resp: Postagem[])    => {
+      this.postagemService.getByTituloPostagem(this.tituloPost).subscribe((resp: Postagem[]) => {
         this.listaPostagens = resp
       })
     }    

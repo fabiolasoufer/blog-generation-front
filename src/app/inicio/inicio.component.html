@@ -1,8 +1,7 @@
 <div class="container-fluid">
 
-    <div class="row bg-secondary d-flex align-items-center">
-        <div class="col-md-6">
-            
+    <div class="row bg-secondary d-flex align-items-center">        
+      <div class="col-md-6">            
             <div class="row d-flex justify-content-center">
                 <div class="col-md-6 text-white">
                     <h1 class="fs-54">Seja bem vinde!</h1>
@@ -13,7 +12,7 @@
             <div class="row d-flex justify-content-center mt-3 mb-5">
                 <div class="col-md-6">
                     <button class="btn btn-light mr-2" data-toggle="modal" data-target="#novaPostagem">Nova Postagem</button>
-                    <a *ngIf='authService.adm()' href="#postagens" class="btn btn-outline-light">Ver Postagens</a>
+                    <a href="#postagens" class="btn btn-outline-light">Ver Postagens</a>
                 </div>
             </div>
         </div>
@@ -25,27 +24,27 @@
 </div>
 
 <div class="container mb-5 mt-5" id="postagens">
-    <ul class="nav nav-tabs d-flex justify-content-center" id="nav-tab" role="tablist">
+  <nav>
+    <div class="nav nav-tabs d-flex justify-content-center" id="nav-tab" role="tablist">        
+          <a class="nav-link active text-secondary font-weight-bold" id="nav-todasPostagens-tab" data-toggle="tab" href="#todasPostagens" role="tab" aria-controls="nav-todasPostagens" aria-selected="true">Todas as Postagens</a>
+        
+          <a (click)='findByIdUser()' class="nav-item nav-link text-secondary font-weight-bold" id="nav-minhasPostagens-tab" data-toggle="tab" href="#minhasPostagens" role="tab" aria-controls="nav-minhasPostagens" aria-selected="false">Minhas Postagens</a>
+        
+          <a class="nav-link text-secondary font-weight-bold" id="nav-postagemTema-tab" data-toggle="tab" href="#postagemTema" role="tab" aria-controls="nav-postagemTema" aria-selected="false">Postagens por Temas</a>        
+      </div>
+    </nav>
 
-        <li class="nav-item" role="presentation">
-          <a class="nav-link active text-secondary font-weight-bold" id="home-tab" data-toggle="tab" href="#todasPostagens" role="tab" aria-controls="todasPostagens" aria-selected="true">Todas as Postagens</a>
-        </li>
-        <li class="nav-item" role="presentation">
-          <a (click)='findByIdUser()' class="nav-item nav-link text-secondary font-weight-bold" id="nav-minhasPostagens-tab" data-toggle="tab" href="#minhasPostagens" role="tab" aria-controls="minhasPostagens" aria-selected="false">Minhas Postagens</a>
-        </li>
-        <li class="nav-item" role="presentation">
-          <a class="nav-link text-secondary font-weight-bold" id="contact-tab" data-toggle="tab" href="#temaPostagens" role="tab" aria-controls="temaPostagens" aria-selected="false">Postagens por Temas</a>
-        </li>
-      </ul>
+    <h3 *ngIf='listaPostagens.length == 0' class="text-center text-secondary mt-5">
+      Postagem não encontrada.
+    </h3>
 
-      <div class="tab-content mt-5" id="myTabContent">
+      <div class="tab-content mt-5" id="nav-tabContent">
 
-        <div class="tab-pane fade show active" id="todasPostagens" role="tabpanel" aria-labelledby="todasPostagens-tab">
-
+        <div class="tab-pane fade show active" id="todasPostagens" role="tabpanel" aria-labelledby="nav-todasPostagens-tab">
           <div class="row d-flex justify-content-center mt-5 mb-5">
             <div class="col-md-4">
               <div class="form-group">
-                <input type="text" class="form-control" id="titulo" placeholder="Digite um título de postagem para pesquisar" [(ngModel)]='tituloPost' (keyup)='findByTituloPostagem()'>
+                <input type="text" class="form-control" id="titulo" placeholder="Pesquise uma postagem por título..." [(ngModel)]='tituloPost' (keyup)='findByTituloPostagem()'>
               </div>
             </div>
           </div>
@@ -62,41 +61,36 @@
               </div>
             </div>
           </div>
-
         </div>
-        <div class="tab-pane fade" id="minhasPostagens" role="tabpanel" aria-labelledby="minhasPostagens-tab">
 
-          
+        <div class="tab-pane fade" id="minhasPostagens" role="tabpanel" aria-labelledby="nav-minhasPostagens-tab">          
 
           <div class="card-columns">
             <div class="card text-center" *ngFor='let item of user.postagem | orderBy : key : reverse'>
               <div class="card-body">
                 <h5 class="card-title m-0">{{item.titulo}}</h5>
-                <small class="text-muted"> Tema: {{item.tema.descricao}}</small>
-                <p class="card-text mt-3">{{item.texto}}</p>
-                <p class="card-text"><small class="text-muted">{{item.data | date: 'dd/MM/yyyy'}} às {{item.data | date: 'HH:mm'}}</small></p>
-                
+                <small class="text-muted mb-3"> Tema: {{item.tema.descricao}}</small>
+                <p class="card-text">{{item.texto}}</p>
+                <p class="card-text"><small class="text-muted">{{item.data | date: 'dd/MM/yyyy'}} às {{item.data | date: 'HH:mm'}}</small></p>                
                 <a [routerLink]="['/postagem-edit', item.id]" class="text-info mr-3" href="">Editar</a>
                 <a [routerLink]="['/postagem-delete', item.id]" class="text-danger" href="">Apagar</a>
-
               </div>
             </div>
           </div>
+        </div>        
 
-        </div>
-
-        <div class="tab-pane fade" id="temaPostagens" role="tabpanel" aria-labelledby="temaPostagens-tab">
+        <div class="tab-pane fade" id="postagemTema" role="tabpanel" aria-labelledby="nav-postagemTema-tab">
 
           <div class="row d-flex justify-content-center mt-5 mb-5">
             <div class="col-md-4">
               <div class="form-group">
-                <input type="text" class="form-control" id="titulo" placeholder="Digite um tema para pesquisar" [(ngModel)]='nomeTema' (keyup)='findByNomeTema()'>
+                <input type="text" class="form-control" id="titulo" placeholder="Pesquise por um tema..." [(ngModel)]='nomeTema' (keyup)='findByNomeTema()'>                
               </div>
             </div>
           </div>
 
-          <div class="card-columns" *ngFor='let tema of listaTemas'>
-            <div class="card text-center" *ngFor='let item of tema.postagem | orderBy : key : reverse'>
+          <div class="card-columns" *ngFor="let tema of listaTemas">
+            <div class="card text-center" *ngFor="let item of tema.postagem | orderBy : key : reverse">
               <div class="card-body">
                 <h5 class="card-title m-0">{{item.titulo}}</h5>                
                 <p class="card-text mt-3">{{item.texto}}</p>
@@ -123,10 +117,9 @@
         </div>
 
         <div class="modal-body">
-
           <div class="form-group">
               <label for="titulo">Título</label>
-              <input [(ngModel)]='postagem.titulo' type="text" class="form-control" ide="titulo" placeholder="Digite o título">
+              <input [(ngModel)]='postagem.titulo' type="text" class="form-control" id="titulo" placeholder="Digite o título">
           </div>
 
           <div class="form-group">
