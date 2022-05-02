@@ -1,35 +1,97 @@
-<div class="container-fluid">
-    <div class="row d-flex align-items-center">
-        <div class="col-md-6">
-            <div class="row d-flex justify-content-center">
-                <div class="col-md-6">
-                    <h1 class="text-center mb-3">Entrar</h1>
-                    <div class="form-group">
-                        <label for="usuario">Usuário</label>
-                        <input [(ngModel)]='userLogin.usuario' class="form-control" type="text" name="usuario" id="usuario" placeholder="Seu usuário">
-                    </div>
-
-                    <div class="form-group">
-                        <label for="senha">Senha</label>
-                        <input [(ngModel)]='userLogin.senha' class="form-control" type="password" name="senha" id="senha" placeholder="Sua senha">
-                    </div>
-
-                    <div class="d-flex justify-content-center">
-                        <button type="submit" class="btn btn-success" (click)='entrar()'>Entrar</button>
-                    </div>
-
-                    <hr class="mt-5 mb-5">
-
-                    <p class="text-center">
-                        Não tem uma conta? <a routerLink="/cadastrar">Cadastre-se</a>
-                    </p>
-
-                </div>
-
-            </div>
-        </div>
-        <div class="col-md-6" id="img-bg">
-
-        </div>
-    </div>
+<div class="col-md-12" id="img-bg">
+  <nav
+    class="navbar navbar-expand-lg navbar-dark shadow-5-strong d-flex justify-content-end"
+  >
+    <a class="navbar-brand fs-30 text-forma2">Soufer</a>
+    <a class="navbar-brand fs-25 text-cursiva">blog</a>
+    <form class="form-inline text-pink">
+      <button
+        class="btn btn-outline-light my-2 my-sm-0 text-forma2 fs-18 text-white font-weight-bold"
+        data-toggle="modal"
+        data-target="#entrarModal"
+        data-dismiss="modal"
+        type="submit"
+      >
+        Entrar
+      </button>
+    </form>
+  </nav>
 </div>
+
+<!-- Modal -->
+<div
+  class="modal fade"
+  id="entrarModal"
+  tabindex="-1"
+  aria-labelledby="entrarModalLabel"
+  aria-hidden="true"
+>
+  <div class="modal-dialog d-flex justify-content-center">
+    <div class="modal-content ">
+      <div class="modal-header">
+        <h5 class="modal-title text-center text-forma2 fs-30" id="exampleModalLabel">Entrar</h5>
+        <button
+          type="button"
+          class="close"
+          data-dismiss="modal"
+          aria-label="Close"
+        >
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <div class="form-group">
+          <label class="text-forma" for="usuario">Usuário</label>
+          <input
+            [(ngModel)]="userLogin.usuario"
+            class="form-control"
+            type="text"
+            name="usuario"
+            id="usuario"
+            placeholder="Seu usuário"
+          />
+        </div>
+
+        <div class="form-group">
+          <label class="text-forma" for="senha">Senha</label>
+          <input
+            [(ngModel)]="userLogin.senha"
+            class="form-control"
+            type="password"
+            name="senha"
+            id="senha"
+            placeholder="Sua senha"
+          />
+        </div>
+
+        <div class="d-flex justify-content-center">
+          <button type="submit" class="btn btn-secondary btn-lg btn-block text-pink text-forma2 fs-18 bg-roxo rounded-pill" data-dismiss="modal" (click)="entrar()">
+            Entrar
+          </button>
+        </div>
+
+        <hr class="mt-5 mb-5" />
+
+        <p class="text-center font-weight-bold text-forma2 fs-18">
+          Não tem uma conta? <a routerLink="/cadastrar" data-dismiss="modal">Cadastre-se</a>
+        </p>
+      </div>
+      <div class="modal-footer">
+        
+      </div>
+    </div>
+  </div>
+</div>
+
+<footer class="page-footer bg-roxo">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12 d-flex justify-content-center pt-4">
+        <div class="text d-flex justify-content-center">
+          <p class="text-forma2 text-pink">Cadastre-se e acesse o<i class="text-cursiva text-white"> Próximo Nível</i></p>
+          </div>        
+      </div>
+      <div></div>
+    </div>
+  </div>
+</footer>

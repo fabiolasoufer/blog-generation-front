@@ -1,0 +1,57 @@
+
+.fs-20 {
+    font-size: 20pt;
+}
+
+.fs-10 {
+    font-size: 15pt !important;
+}
+
+ul.social-network {
+    list-style: none;
+    padding: 0;
+}
+
+ul.social-network li {
+    display: inline;
+    margin: 0;
+    padding: 5px;
+}
+
+.fa {
+    font-size: 30pt;
+    color: black;
+    padding: 10px;
+}
+
+.fa-font:hover{
+    color: gray;
+}
+
+.fa-camera:hover{
+    color: #C13584;
+}
+
+.fa-quote-left:hover{
+    color: #0072b1;
+}
+
+a {
+    color: black;
+}
+
+.fa-pencil{
+    color: gray;
+}
+
+.fa-trash{
+    color: gray;
+}
+
+.fa-pencil:hover{
+    color: rgb(95, 132, 167);
+}
+
+.fa-trash:hover{
+    color: rgb(192, 93, 93);
+}

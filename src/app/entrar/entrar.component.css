@@ -1,7 +1,20 @@
 #img-bg{
-    background-image: url('../../assets/img/cam.jpg');
-    min-height: 695px;
-    background-position: center;
+    background-image: url('../../assets/img/entrar3.jpg');
+    min-height: 549px;
+    background-position: down;
     background-repeat: no-repeat;
     background-size: cover;
 }
+
+.text p{
+    font-size: 30px;
+    
+  }
+  .text p i{
+    font-size: 45px;
+    
+  }
+  .text{
+    float: center;
+    width: 100%;
+    }

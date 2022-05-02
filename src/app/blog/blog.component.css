@@ -1,0 +1,31 @@
+.fa {    
+    color: #a06b6b;    
+}
+
+.fa-home:hover{
+    color: gray;
+}
+
+.fa-comments:hover{
+    color: gray;
+}
+
+.fa-pencil-square-o:hover{
+    color: gray;
+}
+
+.fa-pencil{
+    color: gray;
+}
+
+.fa-trash{
+    color: gray;
+}
+
+.fa-pencil:hover{
+    color: rgb(95, 132, 167);
+}
+
+.fa-trash:hover{
+    color: rgb(192, 93, 93);
+}
