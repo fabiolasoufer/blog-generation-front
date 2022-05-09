@@ -1,27 +1,31 @@
-# BlogPessoal
+# Blog Pessoal :sparkles:
+### Front-end para blog pessoal :computer:
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 13.1.2.
+![Badge Status](http://img.shields.io/static/v1?label=STATUS&message=Em%20Desenvolvimento&color=GREEN&style=for-the-badge)
 
-## Development server
+<img src="https://user-images.githubusercontent.com/97403936/167475201-8252e42f-0cca-419c-84aa-237989b71045.png" alt="banner be inclusive" width="600"/>
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
 
-## Code scaffolding
+#### Front-end de um modelo de blog pessoal, com:
+- `Sistema para postagens`
+- `Cadastro de usuários (normal/administrador)`
+- `Cadastro de temas`
+- `Feed de postagens`
+- `Página do blog com postagens e fotos`
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
 
-## Build
+<br>
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+## :hammer: Tecnologias Utilizadas 
+- `HTML5`
+- `CSS3`
+- `TypeScript`
+- `Angular Framework`
+- `Figma`
+- `Visual Studio Code`
+<br>
 
-## Running unit tests
+## Autora:
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+|  [<img src="https://avatars.githubusercontent.com/u/97403936?v=4" width=115><br><sub>Fabíola Souza</sub>](https://github.com/fabiolasoufer) |
+| :---: |
